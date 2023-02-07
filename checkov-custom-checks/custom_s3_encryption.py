@@ -30,6 +30,7 @@ class BucketEncryption(BaseResourceCheck):
             id=id,
             categories=categories,
             supported_resources=supported_resources,
+            guideline="https://docs.bridgecrew.io/docs/ckv2_custom_1",
         )
 
     def scan_resource_conf(self, conf):
