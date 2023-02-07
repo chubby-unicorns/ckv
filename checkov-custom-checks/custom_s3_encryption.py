@@ -1,12 +1,14 @@
 from checkov.common.models.enums import CheckResult, CheckCategories
-from checkov.cloudformation.checks.resource.base_resource_value_check import BaseResourceCheck
+from checkov.cloudformation.checks.resource.base_resource_value_check import (
+    BaseResourceCheck,
+)
 
 PII_TAG_KEY = "PII"
 
 
 class BucketEncryption(BaseResourceCheck):
     def __init__(self):
-        '''
+        """
         S3 BUCKET ENCRYPTION (CloudFormation):
         We have 4 Requirements for S3 buckets:
             [1] All buckets must be encrypted, regardless of purpose
@@ -15,7 +17,7 @@ class BucketEncryption(BaseResourceCheck):
             [3] If a bucket is configured to use KMS, it must have a
                 KMSMasterKeyID specified and
             [4]   it must be configured with BucketKeyEnabled
-        '''
+        """
         name = "S3 Buckets: All S3 buckets must have encryption configured; PII buckets must use KMS and have KMSMasterKeyID and must have BucketKeyEnabled"
         id = "CKV_CUSTOM_AWS_CF_S3_ENCR"
         supported_resources = ["AWS::S3::Bucket"]
