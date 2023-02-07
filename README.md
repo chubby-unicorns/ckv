@@ -19,7 +19,7 @@ Build custom Checkov checks using Python. Used in cases where we might have spec
 ## Example commands
 
 ```bash
-export CKV="/path/to/checkov-custom-checks"
-export TARGET="/path/to/template/dir"
+export CHECKS_DIR="/path/to/checkov-custom-checks"
+export TARGET_DIR="/path/to/template/dir"
 checkov -d $TARGET_DIR --external-checks-dir $CHECKS_DIR --check CUSTOM_AWS_6
 ```
