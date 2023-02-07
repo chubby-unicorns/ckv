@@ -9,7 +9,9 @@ Build custom Checkov checks using Python. Used in cases where we might have spec
 ## Prerequisites for using custom checks
 
 - Ensure the folder with custom checks also contains `__init__.py`
-- To include custom checks, use the `--external-checks-dir <dir>` argument, e.g.:
-  - `checkov -d . --external-checks-dir ./checkov-custom-checks`
-- To debug a specific check, use the `--check <CHECKNAME>` argument, e.g.:
-  - `checkov -d . --external-checks-dir ./checkov-custom-checks --check CKV_AWS_DUMMY_123`
+
+- If checks in local directory:
+  - To include custom checks, use the `--external-checks-dir <dir>` argument, e.g.:
+    - `checkov -d . --external-checks-dir ./checkov-custom-checks`
+  - To debug a specific check, use the `--check <CHECKNAME>` argument, e.g.:
+    - `checkov -d . --external-checks-dir ./checkov-custom-checks --check CKV_AWS_DUMMY_123`

@@ -38,8 +38,10 @@ class BucketEncryption(BaseResourceCheck):
                 if "Tags" in Properties.keys():
                     for tag in Properties["Tags"]:
                         if tag["Key"] == PII_TAG_KEY:
-                            is_pii = True
-
+                            tag_key = tag["Key"]
+                            tag_value = str(tag["Value"]).lower()
+                            if tag_value == "true" or tag_value == "yes":
+                                is_pii = True
                 BucketEncr = Properties["BucketEncryption"]
                 if "ServerSideEncryptionConfiguration" in BucketEncr.keys():
                     SseConfig = BucketEncr["ServerSideEncryptionConfiguration"][0]
