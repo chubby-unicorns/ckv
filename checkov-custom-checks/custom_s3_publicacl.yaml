@@ -7,7 +7,7 @@ definition:
     - resource_types:
         - AWS::S3::Bucket
       connected_resource_types:
-        - aws_s3_bucket_public_access_block
+        - PublicAccessBlockConfiguration
       operator:  exists
       cond_type: connection
     - cond_type: filter
